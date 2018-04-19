@@ -1,0 +1,17 @@
+{% extends "home.html" %}
+{% block bodyblock %}
+
+<div class="jambotron">
+
+  <h1>Please Login Here !</h1>
+  <form  action="{% url 'inventory:user_login' %}" method="POST">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="name" placeholder="Enter Username here">
+    <label for="password">Password:</label>
+    <input type="password" name="passwd" placeholder="Enter password here">
+    <input type="submit" class="btn btn-primary" value="Submit">
+  </form>
+
+</div>
+{% endblock %}

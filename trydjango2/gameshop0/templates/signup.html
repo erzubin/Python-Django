@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'home.html' %}
+{% block bodyblock %}
+<div class="jumbotron">
+  <div class="row">
+
+    <div class="col-md-4">
+
+      <p></p>
+      <h1>Lets Sign U Up !</h1>
+      <p></p>
+      <form class="form-group"  method="POST">
+
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="Submit">
+
+      </form>
+    </div>
+
+
+    <div class="col-md-8">
+      <img src="http://www.lanehartbooks.com/uploads/7/8/1/6/78163430/4007905_orig.png" alt="image not found">
+    </div>
+
+  </div>
+</div>
+
+
+
+{% endblock %}

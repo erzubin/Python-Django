@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'home.html' %}
+{% block bodyblock %}
+<div class="page-header text-center">
+  <h1>Games</h1>
+</div>
+<table class="table table-striped table-hover">
+  <thead>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Type</th>
+    <th scope="col">Status</th>
+  </thead>
+  {% for game in game_info %}
+  <tr>
+    <th scope="col">{{game.id}}</th>
+    <td>{{game.game_name}}</td>
+    <td>{{game.game_type}}</td>
+    {% for ass in status %}
+    {% if game.game_name == ass.game_name.game_name and game.game_type == ass.game_name.game_type %}
+    <td>Assigned -  {{ass.customer_phone.email}}  -  {{ass.current_date}}</td>
+    <td> <a href="/inventory/{{ass.customer_phone.email}}/{{ass.game_name.game_type}}" class="btn btn-primary"> Return </a> </td>
+    {% endif %}
+
+    {% endfor %}
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'home.html' %}
+{% block bodyblock %}
+<div class="jumbotron">
+  {% if registered %}
+  <h1>Thank for registering, New Employee!</h1>
+  {% else %}
+  <div class="row">
+
+    <div class="col-md-6">
+
+      <p></p>
+      <h1>Register</h1>
+      <p></p>
+      <form class="form-group" method="POST">
+        {{ user_form.as_p }}
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="submit">
+      </form>
+    </div>
+
+
+    <div class="col-md-6">
+      <img src="https://4.imimg.com/data4/GY/MG/ANDROID-25223310/product-500x500.jpeg" alt="image not found">
+    </div>
+
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
