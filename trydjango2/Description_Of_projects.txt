@@ -1,8 +1,0 @@
-1> ProjectDjango
->>>>
-This project has the basic two app:
-	
-	# app1Assign : it is more on creating project , creating app within it , making view , displaying httpresponse to the web page and  basic url route
-	
-	# app2Assign : it is covers templates, basic urlmapping with include function , static file handling and basic of template tags
- 
